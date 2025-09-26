@@ -1,27 +1,36 @@
-/* src/index.css (Corrected) */
+/* src/index.css (Updated with Teacher Theme) */
 
-/* --- Global variables and resets --- */
 :root {
-  --primary-color: #6B4CE6;
-  --secondary-color: #8F7EF3;
-  --background-color: #F8F9FD;
+  --primary-color: #4CAF50;
+  --secondary-color: #2d5016;
+  --accent-color: #6366f1;
   --text-color: #333;
-  --gray-light: #F0F2F5;
-  --white: #FFFFFF;
+  --text-light: #666;
+  --background-color: #f8f9fa;
+  --white: #ffffff;
+  --gray-light: #e0e0e0;
+  --gray-medium: #9ca3af;
+  --success: #4CAF50;
+  --danger: #f44336;
+  --warning: #ff9800;
+  --info: #2196F3;
+  --border-radius: 8px;
+  --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
 }
 
-/* --- Base styles for the entire page --- */
 body {
-  font-family: 'Inter', sans-serif; /* Use the font from the student theme */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
+  line-height: 1.6;
 }
 
 #root {
