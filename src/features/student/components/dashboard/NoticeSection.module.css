@@ -1,0 +1,32 @@
+/* src/features/student/components/dashboard/NoticeSection.module.css */
+
+.notice-section {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.notice-section h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: var(--text-color);
+}
+
+.notice-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notice-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--gray-light);
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+    text-align: left; /* Added for better alignment */
+}
+
+.notice-list li:last-child {
+    border-bottom: none;
+}

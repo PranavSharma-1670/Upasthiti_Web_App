@@ -1,0 +1,16 @@
+/* src/base/StudentLayout.module.css */
+.dashboardContainer {
+    display: flex;
+    min-height: 100vh;
+}
+
+.mainContent {
+    flex: 1;
+    padding: 2rem;
+}
+
+@media (max-width: 768px) {
+    .dashboardContainer {
+        flex-direction: column;
+    }
+  }

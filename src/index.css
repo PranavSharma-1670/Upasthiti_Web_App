@@ -1,0 +1,29 @@
+/* src/index.css (Corrected) */
+
+/* --- Global variables and resets --- */
+:root {
+  --primary-color: #6B4CE6;
+  --secondary-color: #8F7EF3;
+  --background-color: #F8F9FD;
+  --text-color: #333;
+  --gray-light: #F0F2F5;
+  --white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* --- Base styles for the entire page --- */
+body {
+  font-family: 'Inter', sans-serif; /* Use the font from the student theme */
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+#root {
+  width: 100%;
+}

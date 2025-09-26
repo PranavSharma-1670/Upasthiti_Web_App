@@ -1,0 +1,139 @@
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f0f2f5;
+    color: #333;
+  } */
+  
+  .hidden {
+    opacity: 0;
+  }
+  
+  .app {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .app.fade-in {
+    opacity: 1;
+    z-index: 1;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #024995;
+    color: white;
+  }
+  .header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  .header nav a {
+    margin: 0 1rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  .header nav a:hover {
+    color: #f7d000;
+  }
+  .hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero {
+    position: relative;
+    padding: 5rem 2rem;
+    background: url("https://images.squarespace-cdn.com/content/v1/64c78dcaa8ff677c508ade68/03a391a4-71cd-4634-a8a7-002dcc0d6042/India-School-Enrolment-Data.png")
+      no-repeat center top/cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 800px;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(223, 9, 55, 0.7),
+      rgba(2, 73, 149, 0.8)
+    );
+    z-index: 1;
+  }
+  .hero > * {
+    position: relative;
+    z-index: 2;
+  }
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .hero p {
+    font-size: 1.2rem;
+    margin-top: 0;
+    max-width: 600px;
+  }
+  
+  .button-container {
+    margin-top: 1.5rem;
+  }
+  .button {
+    margin: 0 0.5rem;
+    padding: 0.8rem 2rem;
+    border: none;
+    background-color: white;
+    color: #024995;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  .button:hover {
+    transform: translateY(-3px);
+    background-color: #f7d000;
+  }
+  
+  .features {
+    padding: 3rem 2rem;
+    background-color: #fff;
+  }
+  .features h2 {
+    color: #024995;
+    margin-bottom: 2rem;
+  }
+  .features ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .footer {
+    padding: 1rem 2rem;
+    background-color: #024995;
+    color: white;
+  }
+  .footer p {
+    margin: 0;
+  }
+  
