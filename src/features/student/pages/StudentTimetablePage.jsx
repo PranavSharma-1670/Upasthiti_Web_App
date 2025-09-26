@@ -14,7 +14,7 @@ const StudentTimetablePage = () => {
 
   return (
     <>
-      <header className={styles.pageHeader}>
+      <header className={styles['page-header']}>
         <nav className={styles.breadcrumb}>
           <a href="/student/dashboard">Home</a>
           <span>›</span>
@@ -22,20 +22,20 @@ const StudentTimetablePage = () => {
         </nav>
       </header>
 
-      <section className={styles.timetableContent}>
-        <div className={styles.timetableHeader}><h1>TIME TABLE</h1></div>
-        <div className={styles.timetableContainer}>
-          <div className={styles.timetableGrid}>
-            <div className={styles.timeHeader}></div>
+      <section className={styles['timetable-content']}>
+        <div className={styles['timetable-header']}><h1>TIME TABLE</h1></div>
+        <div className={styles['timetable-container']}>
+          <div className={styles['timetable-grid']}>
+            <div className={styles['time-header']}></div>
             {timeSlots.map((time, index) => (
-              <div key={index} className={styles.timeSlot}>{time}</div>
+              <div key={index} className={styles['time-slot']}>{time}</div>
             ))}
             {Object.entries(schedule).map(([day, subjects]) => (
               <React.Fragment key={day}>
-                <div className={styles.dayLabel}>{day}</div>
+                <div className={styles['day-label']}>{day}</div>
                 {subjects.map((subject, index) => (
-                  <div key={index} className={subject ? styles.subjectCard : styles.emptySlot}>
-                    {subject && <div className={styles.subjectCode}>{subject}</div>}
+                  <div key={index} className={subject ? styles['subject-card'] : styles['empty-slot']}>
+                    {subject && <div className={styles['subject-code']}>{subject}</div>}
                   </div>
                 ))}
               </React.Fragment>

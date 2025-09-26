@@ -4,11 +4,7 @@ import styles from './StudentCalendarPage.module.css';
 const StudentCalendarPage = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [calendarDays, setCalendarDays] = useState([]);
-
-  const months = [
-    'January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'
-  ];
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
   const generateCalendar = (date) => {
     const year = date.getFullYear();
@@ -31,9 +27,7 @@ const StudentCalendarPage = () => {
     setCalendarDays(days);
   };
 
-  useEffect(() => {
-    generateCalendar(currentDate);
-  }, [currentDate]);
+  useEffect(() => { generateCalendar(currentDate); }, [currentDate]);
 
   const navigateMonth = (direction) => {
     const newDate = new Date(currentDate);
@@ -43,7 +37,7 @@ const StudentCalendarPage = () => {
 
   return (
     <>
-      <header className={styles.pageHeader}>
+      <header className={styles['page-header']}>
         <nav className={styles.breadcrumb}>
           <a href="/student/dashboard">Home</a>
           <span>›</span>
@@ -51,20 +45,20 @@ const StudentCalendarPage = () => {
         </nav>
       </header>
 
-      <section className={styles.calendarSection}>
-        <div className={styles.calendarHeader}>
-          <div className={styles.calendarTitle}><h1>My Calendar</h1></div>
-          <div className={styles.calendarControls}>
-            <button className={styles.navBtn} onClick={() => navigateMonth(-1)}>❮</button>
-            <button className={styles.navBtn} onClick={() => navigateMonth(1)}>❯</button>
+      <section className={styles['calendar-section']}>
+        <div className={styles['calendar-header']}>
+          <div className={styles['calendar-title']}><h1>My Calendar</h1></div>
+          <div className={styles['calendar-controls']}>
+            <button className={styles['nav-btn']} onClick={() => navigateMonth(-1)}>❮</button>
+            <button className={styles['nav-btn']} onClick={() => navigateMonth(1)}>❯</button>
           </div>
         </div>
 
-        <div className={styles.calendarContainer}>
-          <div className={styles.calendarMonthYear}>
+        <div className={styles['calendar-container']}>
+          <div className={styles['calendar-month-year']}>
             <h2>{months[currentDate.getMonth()]} {currentDate.getFullYear()}</h2>
           </div>
-          <div className={styles.calendarGrid}>
+          <div className={styles['calendar-grid']}>
             <div className={styles.weekday}>Sun</div>
             <div className={styles.weekday}>Mon</div>
             <div className={styles.weekday}>Tue</div>
@@ -72,14 +66,19 @@ const StudentCalendarPage = () => {
             <div className={styles.weekday}>Thu</div>
             <div className={styles.weekday}>Fri</div>
             <div className={styles.weekday}>Sat</div>
-            {calendarDays.map((day, index) => (
-              <div 
-                key={index} 
-                className={`${styles.calendarDay} ${!day.isCurrentMonth ? styles.otherMonth : ''} ${day.isToday ? styles.today : ''}`}
-              >
-                <div className={styles.dateNumber}>{day.date.getDate()}</div>
-              </div>
-            ))}
+            {calendarDays.map((day, index) => {
+              const dayClasses = [
+                styles['calendar-day'],
+                !day.isCurrentMonth ? styles['other-month'] : '',
+                day.isToday ? styles.today : ''
+              ].join(' ');
+
+              return (
+                <div key={index} className={dayClasses.trim()}>
+                  <div className={styles['date-number']}>{day.date.getDate()}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -16,7 +16,7 @@ const StudentTeachersPage = () => {
 
   return (
     <>
-      <header className={styles.pageHeader}>
+      <header className={styles['page-header']}>
         <nav className={styles.breadcrumb}>
           <a href="/student/dashboard">Home</a>
           <span>›</span>
@@ -24,28 +24,28 @@ const StudentTeachersPage = () => {
         </nav>
       </header>
 
-      <section className={styles.teachersContent}>
-        <div className={styles.teachersHeader}>
+      <section className={styles['teachers-content']}>
+        <div className={styles['teachers-header']}>
           <h1>Faculty Members</h1>
           <p>Get in touch with your teachers and faculty members</p>
         </div>
 
-        <div className={styles.teachersList}>
+        <div className={styles['teachers-list']}>
           {teachers.map(teacher => (
-            <div key={teacher.id} className={styles.teacherBar}>
-              <div className={styles.teacherDetails}>
-                <div className={styles.teacherInfoStack}>
-                  <div className={styles.teacherNameRow}>
-                    <h3 className={styles.teacherName}>{teacher.name}</h3>
-                    <span className={styles.teacherSubject}>{teacher.subject}</span>
+            <div key={teacher.id} className={styles['teacher-bar']}>
+              <div className={styles['teacher-details']}>
+                <div className={styles['teacher-info-stack']}>
+                  <div className={styles['teacher-name-row']}>
+                    <h3 className={styles['teacher-name']}>{teacher.name}</h3>
+                    <span className={styles['teacher-subject']}>{teacher.subject}</span>
                   </div>
-                  <div className={styles.contactItem}>
-                    <span className={styles.contactLabel}>Email:</span>
-                    <span className={styles.contactValue}>{teacher.email}</span>
+                  <div className={styles['contact-item']}>
+                    <span className={styles['contact-label']}>Email:</span>
+                    <span className={styles['contact-value']}>{teacher.email}</span>
                   </div>
-                  <div className={styles.contactItem}>
-                    <span className={styles.contactLabel}>Phone:</span>
-                    <span className={styles.contactValue}>{teacher.phone}</span>
+                  <div className={styles['contact-item']}>
+                    <span className={styles['contact-label']}>Phone:</span>
+                    <span className={styles['contact-value']}>{teacher.phone}</span>
                   </div>
                 </div>
               </div>
