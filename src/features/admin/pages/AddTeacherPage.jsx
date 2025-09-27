@@ -51,7 +51,7 @@ const AddTeacher = () => {
     
     try {
       // We will also create this POST endpoint in the next step
-      const res = await fetch('http://localhost:5050/api/teachers', {
+      const res = await fetch('http://localhost:5050/api/admin/teachers', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -148,6 +148,7 @@ const AddTeacher = () => {
                 <option value="Subject Teacher">Subject Teacher</option>
                 <option value="Class Teacher">Class Teacher</option>
                 <option value="Non-Teaching Staff">Non-Teaching Staff</option>
+                <option value="Admin">Admin</option>
               </select>
             </div>
 

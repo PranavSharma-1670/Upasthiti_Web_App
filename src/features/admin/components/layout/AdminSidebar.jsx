@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Speedometer2, CalendarCheck, PersonPlus, Person, Pencil, Check2Square, FileText, Database, ClipboardCheck } from "react-bootstrap-icons";
+import {X, Speedometer2, CalendarCheck, PersonPlus, Person, Pencil, Check2Square, FileText, Database, ClipboardCheck } from "react-bootstrap-icons";
 
 // Note: This component uses global Bootstrap classes, so it does not need a .module.css file.
-const AdminSidebar = () => {
+const AdminSidebar = ({ isOpen, toggleSidebar, currentPage, setCurrentPage }) => {
   const location = useLocation();
   const menuItems = [
     { name: "Dashboard", path: "/admin/dashboard", icon: <Speedometer2 /> },
@@ -18,19 +18,47 @@ const AdminSidebar = () => {
   ];
 
   return (
-    <div className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style={{width: '280px'}}>
-      <span className="fs-4">Admin Menu</span>
+
+    <div 
+      className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" 
+      style={{ width: isOpen ? '280px' : '70px', transition: 'width 0.3s ease' }}
+    >
+      {/* 2. Header now includes a close button, visible only when open */}
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <span className="fs-4" style={{ display: isOpen ? 'block' : 'none' }}>Admin Menu</span>
+        {isOpen && (
+          <button className="btn btn-dark" onClick={toggleSidebar}>
+            <X size={24} />
+          </button>
+        )}
+      </div>
       <hr />
       <ul className="nav nav-pills flex-column mb-auto">
         {menuItems.map((item) => (
-          <li key={item.name} className="nav-item">
-            <Link to={item.path} className={`nav-link text-white ${location.pathname === item.path ? "active" : ""}`}>
-              {item.icon} <span className="ms-2">{item.name}</span>
+          <li key={item.name} className="nav-item" title={isOpen ? '' : item.name}>
+            <Link to={item.path} className={`nav-link text-white d-flex align-items-center ${location.pathname === item.path ? "active" : ""}`}>
+              {item.icon}
+              {/* 3. The menu item text is now only rendered when the sidebar is open */}
+              {isOpen && <span className="ms-2">{item.name}</span>}
             </Link>
           </li>
         ))}
       </ul>
     </div>
+    
+    // <div className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark " style={{width: '280px'}}>
+    //   <span className="fs-4">Admin Menu</span>
+    //   <hr />
+    //   <ul className="nav nav-pills flex-column mb-auto">
+    //     {menuItems.map((item) => (
+    //       <li key={item.name} className="nav-item">
+    //         <Link to={item.path} className={`nav-link text-white ${location.pathname === item.path ? "active" : ""}`}>
+    //           {item.icon} <span className="ms-2">{item.name}</span>
+    //         </Link>
+    //       </li>
+    //     ))}
+    //   </ul>
+    // </div>
   );
 };
 export default AdminSidebar;

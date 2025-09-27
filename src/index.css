@@ -36,3 +36,46 @@ body {
 #root {
   width: 100%;
 }
+
+/* --- Custom Styles for React-Calendar --- */
+
+.react-calendar {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.react-calendar__tile {
+  background: none;
+  color: #212529;
+}
+
+.react-calendar__tile--now {
+  background: #e7f1ff;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.react-calendar__tile.holiday-tile {
+  background-color: #ffcccc !important;
+  color: #dc3545 !important;
+  border-radius: 50% !important;
+  font-weight: bold;
+  position: relative;
+}
+
+.react-calendar__tile.holiday-tile:hover::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #dc3545;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  z-index: 10;
+}

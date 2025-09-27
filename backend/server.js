@@ -4,20 +4,18 @@ import cors from "cors";
 import bodyParser from "body-parser";
 
 import adminApiRoutes from './admin.api.js';
+import splashApiRoutes from './splash.api.js';
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-
-// --- Mount API Routes ---
-// app.use("/api/student", ...); // Example from previous modules
-// app.use("/api/teacher", ...); // Example from previous modules
 
 // Root check
 app.get("/", (req, res) => {
     res.send("Backend is running...");
   });
 
+app.use("/api/splash", splashApiRoutes);
 app.use("/api/admin", adminApiRoutes);
 
 app.listen(5050, () => {
